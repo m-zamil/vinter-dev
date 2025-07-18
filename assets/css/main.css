@@ -62,6 +62,12 @@ h3 {
   padding: 0 40px;
   max-width: 1440px;
   margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+footer {
+  position: relative;
+  z-index: 1;
 }
 .nowrap {
   white-space: nowrap;
@@ -206,6 +212,10 @@ h3 {
 @media (min-width: 1024px) {
   .hero {
     padding-top: 36px;
+    background-image: url(./assets/images/bg-hero.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: 100px;
   }
   .logo {
     width: 160px;
@@ -301,9 +311,6 @@ h3 {
   height: 14px;
 }
 
-.features h2 {
-}
-
 .benefits {
   display: flex;
   flex-wrap: wrap;
@@ -343,7 +350,7 @@ h3 {
   }
   .features__visuals {
     gap: 12px;
-    padding-top: 175px;
+    padding-top: 75px;
     flex-wrap: nowrap;
   }
   .features__visuals > * {
@@ -375,7 +382,7 @@ h3 {
     display: none;
   }
   .features__title {
-    margin-top: 62px;
+    margin-top: 56px;
   }
   .benefits {
     margin-top: 48px;
@@ -399,9 +406,12 @@ h3 {
   padding-top: 12px;
   text-align: center;
 }
+.intelligent-hiring h2 {
+  margin-bottom: 24px;
+}
 .intelligent-hiring .intro {
   line-height: 1.375;
-  margin-top: 24px;
+  margin-top: 14px;
 }
 
 .intelligent-hiring .cta {
@@ -447,11 +457,11 @@ h3 {
     max-width: 25ch;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 30px;
   }
   .intelligent-hiring .intro {
     font-size: 18px;
     line-height: 1.5;
-    margin-top: 30px;
     max-width: 58ch;
     margin-left: auto;
     margin-right: auto;
@@ -463,9 +473,18 @@ h3 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1fr 1fr;
+    gap: 20px;
+    margin-top: 36px;
   }
   .feature-card {
     flex: 1 1 auto;
+  }
+  .feature-card p {
+    font-size: 16px;
+    line-height: 1.3;
+  }
+  .feature-card h3 {
+    margin-top: 8px;
   }
 }
 /* ======== Client ========== */
@@ -589,6 +608,9 @@ h3 {
     --swiper-pagination-bullet-size: 19px;
     --swiper-pagination-bullet-horizontal-gap: 22px;
   }
+  .swiper .swiper-slide {
+    margin-bottom: 68px;
+  }
   .clients-testimonials {
     margin-top: 40px;
   }
@@ -689,7 +711,7 @@ h3 {
     line-height: 1.3;
   }
   .process .cta-wrapper {
-    margin-top: 30px;
+    margin-top: 24px;
   }
 }
 
@@ -822,6 +844,9 @@ h3 {
   border-radius: 0 0 7px 7px;
 }
 @media (min-width: 1024px) {
+  .compare {
+    padding-top: 100px;
+  }
   .compare h2 {
     max-width: 25ch;
     margin-left: auto;
@@ -846,6 +871,15 @@ h3 {
   }
   .vinter-col {
     padding: 12px 0;
+    background-color: transparent;
+  }
+  .vinter-col span {
+    padding: 10px 29px;
+    background-color: var(--Vinter-Dark-blue);
+    border-radius: 4px;
+  }
+  .check-1 {
+    border-radius: 7px 7px 0 0;
   }
   .compare-table {
     margin-top: 54px;
@@ -896,7 +930,7 @@ h3 {
 }
 @media (min-width: 1024px) {
   .integrations {
-    padding-top: 120px;
+    padding-top: 132px;
   }
   .integrations h2 {
     max-width: 15ch;
@@ -913,7 +947,7 @@ h3 {
     margin-right: auto;
   }
   .int-apps {
-    margin-top: 24px;
+    margin-top: 50px;
     gap: 20px;
   }
   .int-app {
@@ -931,8 +965,6 @@ h3 {
   padding-top: 80px;
 }
 
-.signup-wrapper {
-}
 .signup-wrapper .desc {
   font-size: 14px;
   text-align: center;
@@ -942,7 +974,6 @@ h3 {
 /* Form Styles */
 .signup-form {
   flex: 1 1 50%;
-  margin-top: 40px;
 }
 
 .signup-form h2 {
@@ -957,6 +988,7 @@ h3 {
 .signup-form form {
   display: flex;
   flex-direction: column;
+  margin-top: 40px;
 }
 
 .signup-form label {
@@ -1005,8 +1037,12 @@ h3 {
 .signup-form .cta {
   padding: 16px 32px;
   margin-top: 24px;
+  max-width: 428px;
 }
 @media (min-width: 1024px) {
+  .signup-section {
+    padding-top: 132px;
+  }
   .signup-wrapper {
     display: flex;
     border-radius: 16px;
@@ -1019,6 +1055,7 @@ h3 {
     margin-right: -56px;
     z-index: 1;
     position: relative;
+    flex-basis: 44%;
   }
   .signup-form h2 {
     text-align: left;
@@ -1028,6 +1065,7 @@ h3 {
     text-align: left;
     font-size: 18px;
     font-weight: 600;
+    line-height: 1.5;
   }
   .signup-wrapper .desc strong {
     font-weight: 600;
@@ -1038,6 +1076,10 @@ h3 {
   .checkbox-wrap input[type="checkbox"] {
     width: 17px;
     height: 17px;
+  }
+  .signup-form input[type="text"],
+  .signup-form input[type="email"] {
+    margin-bottom: 20px;
   }
 
   .signup-image {
@@ -1069,6 +1111,7 @@ h3 {
   border-radius: 16px;
   margin-bottom: 12px;
   overflow: hidden;
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.05);
 }
 .faq-question {
   width: 100%;
@@ -1111,7 +1154,15 @@ h3 {
 }
 @media (min-width: 1024px) {
   .faq-section {
-    padding-top: 70px;
+    padding-top: 84px;
+  }
+  .faq-header h2 {
+    font-size: 60px;
+    line-height: 1.2;
+    max-width: 11ch;
+  }
+  .faq-header p {
+    max-width: 37ch;
   }
   .faq-header h2,
   .faq-header p {
@@ -1126,6 +1177,7 @@ h3 {
   }
   .faq-accordion {
     flex: 1.25;
+    margin-top: 0;
   }
   .faq-header p {
     font-size: 18px;
@@ -1146,7 +1198,7 @@ h3 {
 /* =========== Explore ========== */
 .explore {
   margin-top: 26px;
-  margin-bottom: 46px;
+  padding-bottom: 46px;
 }
 .explore-content {
   padding: 40px 20px;
@@ -1179,7 +1231,7 @@ h3 {
 @media (min-width: 1024px) {
   .explore {
     margin-top: 62px;
-    margin-bottom: 180px;
+    padding-bottom: 180px;
   }
   .explore-image {
     display: block;
@@ -1211,6 +1263,9 @@ h3 {
   }
   .explore p strong {
     font-size: 18px;
+  }
+  .explore .cta {
+    margin-top: 0;
   }
 }
 
@@ -1245,14 +1300,118 @@ h3 {
 }
 
 /* =========== Background ========== */
-.bg-1 {
-  background-image: url("../images/bg-1-desktop.svg");
-  background-repeat: no-repeat;
-  background-size: cover;
+/* Mobile */
+@media (max-width: 1023px) {
+  .bg-1 {
+    position: relative;
+  }
+  .bg-1::after {
+    content: "";
+    display: block;
+    background-image: url("../images/bg-1-mobile.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    top: 0;
+    height: 1378px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 0;
+    mix-blend-mode: color-burn;
+  }
+  .bg-2 {
+    position: relative;
+  }
+  .bg-2::after {
+    content: "";
+    display: block;
+    background-image: url("../images/bg-2-mobile.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    top: -650px;
+    height: 5528px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: -1;
+    mix-blend-mode: color-burn;
+  }
+  .bg-3 {
+    position: relative;
+  }
+  .bg-3::after {
+    content: "";
+    display: block;
+    background-image: url("../images/bg-3-mobile.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    top: 228px;
+    bottom: 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: -1;
+    mix-blend-mode: color-burn;
+  }
 }
-.bg-2 {
-  background: linear-gradient(180deg, #fff 0%, #f3fcf7 21.15%, #bfe8e0 37.98%, #bde7e0 50.96%, #cbf1dc 67.79%, #fff 100%);
-}
-.bg-3 {
-  background: linear-gradient(180deg, #fff 0%, #f3fcf7 21.15%, #bfe8e0 37.98%, #bde7e0 50.96%, #cbf1dc 67.79%, #fff 100%);
+/* Desktop */
+@media (min-width: 1024px) {
+  .bg-1 {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("../images/bg-1.svg");
+  }
+  .bg-2 {
+    position: relative;
+  }
+  .bg-2::after {
+    content: "";
+    display: block;
+    background: url(../images/bg-2.svg);
+    background-size: cover;
+    top: -135px;
+    bottom: -510px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 0;
+    mix-blend-mode: color-burn;
+  }
+  .bg-3 {
+    position: relative;
+  }
+  .bg-3::after {
+    content: "";
+    display: block;
+    background: url(../images/bg-4.svg);
+    background-size: cover;
+    top: 360px;
+    bottom: 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 0;
+  }
+  .clients {
+    position: relative;
+  }
+  .clients::before {
+    content: "";
+    display: block;
+    background-image: url("../images/bg-client.svg");
+    background-size: cover;
+    top: -100px;
+    bottom: -275px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1;
+    margin-bottom: -275px;
+  }
 }
