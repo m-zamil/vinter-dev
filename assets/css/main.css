@@ -721,6 +721,8 @@ footer {
   background-color: #0e1f30;
   padding: 88px 0;
   text-align: center;
+  position: relative;
+  z-index: 2;
 }
 .tests .container {
   max-width: 748px;
@@ -1436,6 +1438,24 @@ footer {
 }
 /* Desktop */
 @media (min-width: 1024px) {
+  .bg-3 {
+    position: relative;
+  }
+  .bg-3::after {
+    content: "";
+    display: block;
+    background: url(../images/bg-4.svg);
+    background-size: cover;
+    top: 360px;
+    bottom: 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 0;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1440px) {
   .bg-1 {
     position: relative;
   }
@@ -1471,22 +1491,7 @@ footer {
     z-index: 0;
     mix-blend-mode: color-burn;
   }
-  .bg-3 {
-    position: relative;
-  }
-  .bg-3::after {
-    content: "";
-    display: block;
-    background: url(../images/bg-4.svg);
-    background-size: cover;
-    top: 360px;
-    bottom: 0;
-    position: absolute;
-    left: 0;
-    right: 0;
-    width: 100%;
-    z-index: 0;
-  }
+
   .clients {
     position: relative;
   }
@@ -1503,5 +1508,31 @@ footer {
     width: 100%;
     z-index: 1;
     margin-bottom: -275px;
+  }
+}
+
+@media (min-width: 1441px) {
+  .bg-1::after,
+  .bg-2::after,
+  .clients::before {
+    content: "";
+  }
+  .bg-111 {
+    position: relative;
+  }
+  .bg-111::after {
+    content: "";
+    display: block;
+    background: url(../images/bg-113.svg);
+    background-size: cover;
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 5399px;
+    width: 100%;
+    z-index: 0;
+    mix-blend-mode: color-burn;
   }
 }
