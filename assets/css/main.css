@@ -1437,10 +1437,23 @@ footer {
 /* Desktop */
 @media (min-width: 1024px) {
   .bg-1 {
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-image: url("../images/bg-1.svg");
+    position: relative;
   }
+  .bg-1::after {
+    content: "";
+    display: block;
+    background-image: url("../images/bg-1.svg");
+    background-size: cover;
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 0;
+    mix-blend-mode: color-burn;
+  }
+
   .bg-2 {
     position: relative;
   }
