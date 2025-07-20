@@ -874,6 +874,21 @@ footer {
   min-width: 100px;
   height: auto;
 }
+@media (max-width: 390px) {
+  .col-2,
+  .col-3,
+  .col-4,
+  .col-5 {
+    min-width: 50px;
+  }
+  .swiper-btn-wrapper img {
+    min-width: 50px;
+    height: auto;
+  }
+  .col span:first-child {
+    font-size: 10px;
+  }
+}
 
 .compare-table-wrapper {
   display: none;
@@ -1318,6 +1333,8 @@ footer {
   }
   .explore-image img {
     height: 100%;
+    object-fit: cover;
+    object-position: right;
   }
   .explore-wrapper {
     display: flex;
