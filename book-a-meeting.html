@@ -58,7 +58,11 @@
 
           <h1>Great choice! Let's activate your trial</h1>
           <p class="subtitle">Book your complimentary onboarding call and we'll activate your free trial in no time.</p>
-          <a href="./book-a-meeting.html" id="next-button" class="cta">GET STARTED</a>
+
+          <!-- Start of Meetings Embed Script -->
+          <div class="meetings-iframe-container" data-src="https://meetings-eu1.hubspot.com/erdem-can1?embed=true"></div>
+          <script type="text/javascript" src="https://static.hsappstatic.net/MeetingsEmbed/ex/MeetingsEmbedCode.js"></script>
+          <!-- End of Meetings Embed Script -->
         </div>
       </section>
     </main>
@@ -84,5 +88,29 @@
         </div>
       </div>
     </footer>
+
+    <script>
+      /* Progress Bar */
+      const steps = document.querySelectorAll(".step");
+
+      function updateProgress(currentStep) {
+        steps.forEach((step, index) => {
+          step.classList.remove("active");
+          if (index < currentStep) {
+            step.classList.add("active");
+          }
+        });
+      }
+      let currentStep = 1; // Start at step 1
+      updateProgress(currentStep);
+
+      function completeStep() {
+        currentStep++;
+        updateProgress(currentStep);
+      }
+
+      const nextButton = document.getElementById("next-button"); // Replace with your button ID
+      nextButton.addEventListener("click", completeStep);
+    </script>
   </body>
 </html>
